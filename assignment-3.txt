@@ -1,0 +1,112 @@
+/session ---2//
+
+CREATE TABLE hr.vitech. jobs (
+	job_id INT IDENTITY(1,1),
+	job_title VARCHAR (35) ,
+	min_salary DECIMAL (8, 2) ,
+	max_salary DECIMAL (8, 2) 
+)
+
+describe table jobs
+
+delete from jobs;
+
+select * from jobs
+
+select count(*) from jobs
+
+//jobs count --- 19 //
+
+----------------------------------------------
+
+CREATE TABLE dependents (
+	dependent_id INT IDENTITY(1,1),
+	first_name VARCHAR (50) ,
+	last_name VARCHAR (50) ,
+	relationship VARCHAR (25),
+	employee_id INT 
+	
+)
+delete from dependents;
+
+select * from dependents
+
+select count(*) from  dependents
+
+ //dependents count ----30//
+
+-----------------------------------------------------------------
+ 
+CREATE TABLE departments (
+	department_id INT IDENTITY(1,1),
+	department_name VARCHAR (30),
+	location_id INT
+
+);
+
+delete from departments;
+
+
+select * from departments
+
+select count(*) from  departments
+
+//departments count ----11//
+
+------------------------------------------------------------------
+
+CREATE TABLE locations (
+	location_id INT IDENTITY(1,1),
+	street_address VARCHAR (40),
+	postal_code VARCHAR (12),
+	city VARCHAR (30),
+	state_province VARCHAR (25),
+	country_id CHAR (2)
+);
+
+delete from locations;
+
+select * from locations
+
+select count(*) from  locations
+
+//departments count ----7 //
+
+-------------------------------------------------------------------
+
+CREATE TABLE countries (
+	country_id CHAR (2),
+	country_name VARCHAR (40),
+	region_id INT 
+);
+
+delete from  countries;
+
+
+select * from  countries
+
+select count(*) from  countries
+
+//countries count -----25//
+
+-------------------------------------------------------------------
+
+CREATE TABLE regions (
+	region_id INT IDENTITY(1,1) PRIMARY KEY,
+	region_name VARCHAR (25)
+);
+
+INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
+INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
+INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
+INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
+
+
+delete from regions;
+
+
+select * from regions
+
+select count(*) from  regions
+
+//regions count ------4//

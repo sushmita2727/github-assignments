@@ -1,0 +1,141 @@
+create or replace table persons (P_id int , LastName string , FirstName string )
+
+desc table persons;
+
+insert into persons(P_id ,LastName , FirstName  )
+values( 1 , 'Hansen' ,'Ola')
+,( 2 , 'Svendson', 'Tove')
+,( 3 , 'Pettersen', 'Kari')
+
+select * from persons
+
+alter table persons
+add column address varchar(30);
+
+alter table persons
+add column city string ;
+
+update persons
+set address = 'Timoteivn_10'
+
+update persons
+set city= 'Sandnes'
+
+update persons
+set address = 'Borgvn_23'
+where P_id = 2
+
+
+update persons
+set address = 'Storgt_20'
+where P_id = 3
+
+update persons
+set city= 'Sandnes'
+where P_id = 2
+
+update persons
+set city= 'Stavanger'
+where P_id = 3
+
+select FirstName from persons
+
+
+select LastName,FirstName from persons 
+
+select distinct City from persons
+
+select*from persons where City = 'Sandnes'
+
+select*from persons where LastName = 'Svendson' and FirstName ='Tove'
+
+select*from persons where FirstName = 'Ola' or FirstName ='Tove'
+
+select*from persons where LastName = 'Svendson' and ( FirstName ='Tove' or FirstName = 'Ola' )
+
+select * from persons order by LastName 
+
+select * from persons order by LastName desc
+
+delete from persons
+
+
+
+insert into persons(P_id ,LastName , FirstName) values( 4 , 'Nilsen', 'Johan')
+
+update persons 
+set Address ='Bakken_2'
+where P_id = 4
+
+
+
+update persons 
+set City ='Stavanger'
+where P_id = 4
+
+
+insert into persons(P_id ,LastName , FirstName) values( 5 , 'Tjessem', 'Jakob')
+
+update persons 
+set Address ='Nissestien_67',City='Sandnes'
+where P_id = 5
+
+delete from persons
+where FirstName = 'Jakob' and LastName ='Tjessem'
+
+select top 2 * from persons
+
+
+select*from persons
+where LastName like '_e%'
+
+select*from persons
+where city like 'Sta%'
+
+SELECT * FROM Persons
+WHERE LastName LIKE 'S_end_on'
+
+SELECT * FROM Persons
+WHERE City LIKE '%s'
+
+SELECT * FROM Persons
+WHERE City NOT LIKE '%tav%'
+
+SELECT * FROM Persons
+WHERE LastName IN ('Hansen','Pettersen')
+
+
+--SELECT * FROM Persons
+--WHERE LastName between'Hansen'and 'Pettersen'
+
+
+SELECT * FROM Persons
+WHERE LastName
+BETWEEN 'Hansen' AND 'Pettersen'
+
+select LastName as LT from persons
+
+select upper(LastName) from persons
+
+select upper(firstname) from persons
+
+select lower(ADDRESS) from persons
+
+select lower(city) from persons
+
+select concat(FirstName,' ',LastName) from persons
+
+
+select concat(FirstName,' ',LastName) as fullname from persons
+
+
+SELECT * FROM Persons
+WHERE LastName LIKE '[bsp]%'
+
+SELECT * FROM Persons
+WHERE LastName LIKE '[!bsp]%'
+
+
+SELECT * FROM Persons
+WHERE LastName
+not  BETWEEN 'Hansen' AND 'Pettersen'

@@ -1,0 +1,47 @@
+//session ----3//
+
+create or replace table student (sid int , sname string )
+
+
+alter table student
+add column email string;
+
+//alter table student
+//add column phone int;//
+
+alter table student
+modify column phone number (30);
+
+
+
+desc table student ;
+
+select * from  student
+
+insert into student (sid , sname)
+values (101 , 'sushmita')
+insert into student (sid , sname)
+values (102 , 'sir')
+insert into student (sid , sname)
+values (103 , 'potti')
+insert into student (sid , sname)
+values (104 , 'swetha')
+insert into student (sid , sname)
+values (105 , 'priya')
+
+----------------------------------------
+insert into student (sid , sname)
+values (101 , 'sushmita')
+        ,(102 , 'sir')
+        ,(103 , 'potti')
+         ,(104 , 'swetha')
+          ,(105 , 'priya')
+
+update student
+set phone = 9876654332     
+where sid = 102
+
+update student
+set email ='asd@gmail.com',
+phone = 123456
+where sid = 103
